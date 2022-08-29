@@ -5,6 +5,14 @@ public class Aluguel {
     private String nome;
     private double valorFinal;
 
+    public Aluguel(String data, int periodo, String cpf, String nome, double valorFinal) {
+        this.data = data;
+        this.periodo = periodo;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.valorFinal = valorFinal;
+    }
+
     public double calculaValorFinal() { //!
         double desconto;
         periodo * precoDiario = valorFinal;
