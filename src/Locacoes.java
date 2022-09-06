@@ -11,11 +11,17 @@ public class Locacoes {
         listaDeAlugueis.add(aluguel);
     }
     public ArrayList<Aluguel> pesquisaAluguel(String cpf) {
+        ArrayList<Aluguel> listaDesejadaAluguel = new ArrayList<>();
         for(int i=0; i<listaDeAlugueis.size(); i++) {
             Aluguel aluguel1 = listaDeAlugueis.get(i);
-            if(aluguel1.getCpf().equals(cpf))
-                return listaDeAlugueis;
+            if(aluguel1.getCpf().equals(cpf)) {
+                listaDesejadaAluguel.add(aluguel1);
+            }
         }
-        return null;
+        if(listaDesejadaAluguel.isEmpty()) {
+            return null;
+        }
+        return listaDesejadaAluguel;
+
     }
 }

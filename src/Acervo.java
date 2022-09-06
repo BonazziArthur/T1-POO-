@@ -7,13 +7,15 @@ public class Acervo {
         listaItens = new ArrayList<Alugavel>();
     }
 
-    public boolean adicionaAlugavel(Alugavel itemAlugavel) { /**!*/
-        if(itemAlugavel==itemAlugavel(codigo))
-            return false;
-        else {
-            listaItens.add(itemAlugavel);
-            return true;
+    public boolean adicionaAlugavel(Alugavel itemAlugavel) {
+        for (Alugavel item:
+             listaItens) {
+            if(itemAlugavel.getCodigo()==item.getCodigo()) {
+                return false;
+            }
         }
+        listaItens.add(itemAlugavel);
+        return true;
     }
 
     public Alugavel pesquisaAlugavel(int codigo) {
@@ -26,11 +28,17 @@ public class Acervo {
     }
 
     public ArrayList<Alugavel> pesquisaAlugavel(String nome) {
+        ArrayList<Alugavel> listaDesejada = new ArrayList<>();
         for(int i = 0; i < listaItens.size(); i++) {
             Alugavel itemAlugavel = listaItens.get(i);
-            if(itemAlugavel.getNome().equals(nome))
-                return listaItens;
+            if(itemAlugavel.getNome().equals(nome)) {
+                listaDesejada.add(itemAlugavel);
+            }
+            return listaDesejada;
         }
         return null;
+    }
+    public ArrayList<Alugavel> getListaItens() {
+        return listaItens;
     }
 }

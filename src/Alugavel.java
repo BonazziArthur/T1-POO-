@@ -1,42 +1,46 @@
+import java.util.ArrayList;
+
 public class Alugavel {
     private int codigo;
     private String nome;
-    private String imovelNaBelaVista;
-    private String imovelNoCentro;
+    private String rua;
+    private String bairro;
     private double precoDiario;
+    private ArrayList<Aluguel> listaDeAlugueis;
 
     public Alugavel(int codigo, String nome, double precoDiario) {
         this.codigo = codigo;
         this.nome = nome;
         this.precoDiario = precoDiario;
     }
-    //posso fazer o segundo construtor assim?
-    public Alugavel(int codigo, String nome, double precoDiario, String imovelNaBelaVista, String imovelNoCentro) {
-        this.imovelNaBelaVista = imovelNaBelaVista;
-        this.imovelNoCentro = imovelNoCentro;
+    public Alugavel(int codigo, String nome, double precoDiario, String rua, String bairro, ArrayList<Aluguel> listaDeAlugueis) {
+        this.rua = rua;
+        this.bairro = bairro;
         this.codigo = codigo;
         this.nome = nome;
         this.precoDiario = precoDiario;
+        this.listaDeAlugueis = listaDeAlugueis;
     }
 
     public boolean adicionaAluguel(Aluguel aluguel) {
-         //!
+        listaDeAlugueis.add(aluguel);
+        return true;
     }
 
-    public String getImovelNaBelaVista() {
-        return imovelNaBelaVista;
+    public String getRua() {
+        return rua;
     }
 
-    public void setImovelNaBelaVista(String imovelNaBelaVista) {
-        this.imovelNaBelaVista = imovelNaBelaVista;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
-    public String getImovelNoCentro() {
-        return imovelNoCentro;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setImovelNoCentro(String imovelNoCentro) {
-        this.imovelNoCentro = imovelNoCentro;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
     public int getCodigo() {
