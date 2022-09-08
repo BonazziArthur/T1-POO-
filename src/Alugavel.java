@@ -6,25 +6,28 @@ public class Alugavel {
     private String rua;
     private String bairro;
     private double precoDiario;
-    private ArrayList<Aluguel> listaDeAlugueis;
+    private ArrayList<Aluguel> listaDeAlugueis = new ArrayList<>();
 
     public Alugavel(int codigo, String nome, double precoDiario) {
         this.codigo = codigo;
         this.nome = nome;
         this.precoDiario = precoDiario;
     }
-    public Alugavel(int codigo, String nome, double precoDiario, String rua, String bairro, ArrayList<Aluguel> listaDeAlugueis) {
+    public Alugavel(int codigo, String nome, double precoDiario, String rua, String bairro) {
         this.rua = rua;
         this.bairro = bairro;
         this.codigo = codigo;
         this.nome = nome;
         this.precoDiario = precoDiario;
-        this.listaDeAlugueis = listaDeAlugueis;
     }
 
     public boolean adicionaAluguel(Aluguel aluguel) {
         listaDeAlugueis.add(aluguel);
         return true;
+    }
+
+    public ArrayList<Aluguel> getListaDeAlugueis() {
+        return listaDeAlugueis;
     }
 
     public String getRua() {

@@ -107,8 +107,6 @@ public class ACMERental {
                 System.out.println("Bairro: " +item.getBairro());;
             }
         }
-
-
     }
 
     private void menu() {
@@ -122,25 +120,27 @@ public class ACMERental {
         System.out.println("Opcao desejada: ");
     }
 
-    public void preCadastra() { //acabar
-        Alugavel alugavel;
-        Aluguel aluguel;
-        alugavel = new Alugavel(101, "CasaBelaVista", 500.00, "Freire Alemao", "Nonoai");
-        acervo.adicionaAlugavel(alugavel);
-        alugavel = new Alugavel(102, "CasaMontSerrat", 450.00, "Alcebiades", "Bela Vista");
-        acervo.adicionaAlugavel(alugavel);
-        alugavel = new Alugavel(100, "ApartamentoCidadeBaixa", 250.00, "Pedro Ivo", "Floresta");
-        acervo.adicionaAlugavel(alugavel);
-        aluguel = new Aluguel("19/08/2022", 8, "02915275076","Arthur", 250, 100);
-        locacoes.adicionaAluguel(aluguel);
-        aluguel = new Aluguel("28/09/2022", 5, "46552286015", "Cleber", 500);
-        locacoes.adicionaAluguel(aluguel);
-        aluguel = new Aluguel("19/08/2022", 2, "02915275076","Arthur", 250);
-        locacoes.adicionaAluguel(aluguel);
-        aluguel = new Aluguel("28/09/2022", 5, "46552286015", "Cleber", 500);
-        locacoes.adicionaAluguel(aluguel);
-        aluguel = new Aluguel("28/09/2022", 5, "46552286015", "Cleber", 500);
-        locacoes.adicionaAluguel(aluguel);
+    public void preCadastra() {
+        Alugavel alugavel1, alugavel2, alugavel3;
+        Aluguel aluguel1, aluguel2, aluguel3, aluguel4, aluguel5;
+
+        alugavel1 = new Alugavel(101, "CasaBelaVista", 500.00, "Freire Alemao", "Nonoai");
+        acervo.adicionaAlugavel(alugavel1);
+        alugavel2 = new Alugavel(102, "CasaMontSerrat", 450.00, "Alcebiades", "Bela Vista");
+        acervo.adicionaAlugavel(alugavel2);
+        alugavel3 = new Alugavel(100, "ApartamentoCidadeBaixa", 250.00, "Pedro Ivo", "Floresta");
+        acervo.adicionaAlugavel(alugavel3);
+
+        aluguel1 = new Aluguel("19/08/2022", 8, "02915275076","Arthur", 250, alugavel1);
+        locacoes.adicionaAluguel(aluguel1);
+        aluguel2 = new Aluguel("28/09/2022", 5, "46552286015", "Carlos", 500, alugavel1);
+        locacoes.adicionaAluguel(aluguel2);
+        aluguel3 = new Aluguel("21/08/2022", 2, "02515275076","Joao", 250, alugavel1);
+        locacoes.adicionaAluguel(aluguel3);
+        aluguel4 = new Aluguel("30/09/2022", 7, "46552286015", "Cleber", 600, alugavel2);
+        locacoes.adicionaAluguel(aluguel4);
+        aluguel5 = new Aluguel("05/09/2022", 5, "46552286015", "Cleber", 500, alugavel3);
+        locacoes.adicionaAluguel(aluguel5);
 
         System.out.println("Imóveis e Aluguéis pré-cadastrados.");
     }

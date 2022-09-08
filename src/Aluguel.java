@@ -13,8 +13,9 @@ public class Aluguel {
         this.nome = nome;
         this.valorFinal = valorFinal;
         this.itemAlugado = itemAlugado;
-
+        itemAlugado.adicionaAluguel(this);
     }
+
 
     public double calculaValorFinal() {
         double desconto, valorDescontado;
